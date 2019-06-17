@@ -84,16 +84,9 @@ inputs:
       separate: true
       prefix: "-d"
       position: 10
-    default: false
+    default: true
 
-  intermediate_dir:
-    type: string
-    inputBinding:
-      separate: true
-      prefix: "-D"
-      position: 11
-
-  threads:
+  nThreads:
     type: int
     inputBinding:
       separate: true
@@ -102,45 +95,6 @@ inputs:
 
 
 outputs:
-  dedup_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/dedup' + '*pairs.gz')"
-
-  drop_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/drop' + '*pairs.gz')"
-
-  duplication_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/duplication' + '*pairs.gz')"
-
-  sorted_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/sorted' + '*pairs.gz')"
-
-  dedup_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/dedup' + '*pairs.gz')"
-
-  stats_dedup:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/stats_dedup' + '*txt')"
-
-  stats_final:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/stats_final' + '*txt')"
-
-  unmapped_pairs:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/unmapped' + '*pairs.gz')"
 
   final_pairs:
     type: File
