@@ -95,7 +95,6 @@ inputs:
 
 
 outputs:
-
   final_pairs:
     type: File
     outputBinding:

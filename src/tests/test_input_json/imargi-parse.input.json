@@ -5,10 +5,13 @@
     },
     "chromsizes": {
         "class": "File",
-        "path": "../test_files/"
+        "path": "../test_files/hg38.mainonly.chrom.sizes"
     },
     "restrict_fragments": {
         "class": "File",
         "path": "../test_files/"
     },
-    "assembly": "hg38"
+    "assembly": "hg38",
+    "max_ligation_size": 1000,
+    "nThreads": 4
+}
