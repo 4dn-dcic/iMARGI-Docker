@@ -18,13 +18,6 @@ inputs:
       prefix: "-f"
       position: 1
 
-  binsize:
-    type: int
-    inputBinding:
-      separate: true
-      prefix: "-b"
-      position: 2
-
   input_file:
     type: File
     inputBinding:
