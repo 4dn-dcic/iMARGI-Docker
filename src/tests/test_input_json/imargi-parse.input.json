@@ -1,0 +1,14 @@
+{
+    "bam_file": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+    "chromsizes": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+    "restrict_fragments": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+    "assembly": "hg38"
