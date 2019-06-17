@@ -1,0 +1,8 @@
+{
+    "out_format": "cool",
+    "input_file": {
+        "class": "File",
+        "path": "../test_files/",
+    },
+    "out_file": ".cool",
+}
