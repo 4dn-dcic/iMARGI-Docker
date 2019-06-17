@@ -1,0 +1,14 @@
+{
+    "fastq_R1": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+    
+    "fastq_R2": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+    "base_name": "test_file",
+    "nthreads": 1
+}
+       
