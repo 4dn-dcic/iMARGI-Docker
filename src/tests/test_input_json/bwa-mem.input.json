@@ -1,0 +1,15 @@
+{
+    "fastq1": {
+        "class": "File", 
+        "path": "../test_files/"
+    }, 
+    "fastq2": {
+        "class": "File", 
+        "path": "../test_files/"
+    }, 
+    "bwa_index": {
+        "class": "File", 
+        "path": "../test_files/"
+    }, 
+    "nThreads": 1
+}
