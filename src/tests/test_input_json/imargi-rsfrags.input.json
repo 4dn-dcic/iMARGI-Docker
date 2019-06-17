@@ -1,12 +1,12 @@
 { 
      "ref_genome": {
-        "class": "File"
+        "class": "File",
         "path": "../test_files/"
      },
      "chromsizes": {
-        "class": "File"
-        "path": "../test_files/"
+        "class": "File",
+        "path": "../test_files/hg38.mainonly.chrom.sizes"
      },
      "enzyme_name": "AluI",
-     "cut_position": 2,
+     "cut_position": 2
 }
