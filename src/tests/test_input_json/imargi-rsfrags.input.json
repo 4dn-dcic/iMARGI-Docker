@@ -1,0 +1,12 @@
+{ 
+     "ref_genome": {
+        "class": "File"
+        "path": "../test_files/"
+     },
+     "chromsizes": {
+        "class": "File"
+        "path": "../test_files/"
+     },
+     "enzyme_name": "AluI",
+     "cut_position": 2,
+}
