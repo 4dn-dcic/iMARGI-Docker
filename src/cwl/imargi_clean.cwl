@@ -40,7 +40,7 @@ inputs:
       position: 4
     default: "."
 
-  nthreads:
+  nThreads:
     type: int
     inputBinding:
       separate: true
