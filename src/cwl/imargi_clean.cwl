@@ -6,7 +6,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: ""
+  dockerPull: "4dndcic/imargi:v1.1.1"
 
 - class: "InlineJavascriptRequirement"
 

@@ -1,7 +1,7 @@
 ---
   hints:
     -
-      dockerPull: ""
+      dockerPull: "4dndcic/4dn-hic:v42.2"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
