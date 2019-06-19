@@ -5,7 +5,7 @@
      },
      "chromsizes": {
         "class": "File",
-        "path": "../test_files/hg38.mainonly.chrom.sizes"
+        "path": "../test_files/chromsize.hg38.txt"
      },
      "enzyme_name": "AluI",
      "cut_position": 2
