@@ -9,7 +9,7 @@
     },
     "restrict_fragments": {
         "class": "File",
-        "path": "../test_files/"
+        "path": "../test_files/test_AluI_frags.bed.gz"
     },
     "assembly": "hg38",
     "max_ligation_size": 1000,
