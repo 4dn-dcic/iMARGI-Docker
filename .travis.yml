@@ -13,7 +13,7 @@ env:
   - LOCAL_NAME=imargi REMOTE_NAME=4dndcic/imargi
 
 install:
-  - docker build -t $LOCAL_NAME .
+  - docker build -t $LOCAL_NAME ./src/
   - sudo pip install schema_salad
   - sudo pip install cwltool==1.0.20181201184214
   
