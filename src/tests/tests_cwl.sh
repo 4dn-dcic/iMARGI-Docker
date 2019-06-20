@@ -7,6 +7,6 @@ LOCAL_CWL_TMPDIR=$CWD/tests/test_tmp
 CWL_RUNNER=$(which cwltool)
 CWL_RUNNER='python -m cwltool'
 RUNNER_FLAGS="--copy-outputs --no-read-only --no-match-user --outdir $OUTDIR --tmp-outdir-prefix $LOCAL_CWL_TMPDIR --tmpdir-prefix $LOCAL_CWL_TMPDIR --non-strict --debug"
-cd cwl
+cd ../cwl
 $CWL_RUNNER $RUNNER_FLAGS $CWL_FILENAME ../tests/test_input_json/$INPUT_JSON_NAME || exit
 cd ..
