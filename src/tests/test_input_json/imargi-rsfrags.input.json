@@ -1,7 +1,7 @@
 { 
      "ref_genome": {
         "class": "File",
-        "path": "../test_files/"
+        "path": "../test_files/ref_genome_small.fasta"
      },
      "chromsizes": {
         "class": "File",
