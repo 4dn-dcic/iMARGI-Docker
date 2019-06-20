@@ -25,7 +25,6 @@ before_script:
     fi;
 
 script:
-  - source src/tests/tests.sh > /dev/null
   - source src/tests/tests_cwl_all.sh > /dev/null
 
 after_success:
