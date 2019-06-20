@@ -10,7 +10,7 @@ services:
   - docker
  
 env:
-  - LOCAL_NAME=docker-4dn-imargi REMOTE_NAME=4dndcic/imargi
+  - LOCAL_NAME=imargi REMOTE_NAME=4dndcic/imargi
 
 install:
   - docker build -t $LOCAL_NAME .
