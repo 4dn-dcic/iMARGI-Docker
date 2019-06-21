@@ -25,19 +25,12 @@ inputs:
       prefix: "-2"
       position: 2
 
-  base_name:
-    type: string
-    inputBinding:
-      separate: true
-      prefix: "-N"
-      position: 3
-
   output_dir:
     type: string
     inputBinding:
       separate: true
       prefix: "-o"
-      position: 4
+      position: 3
     default: "."
 
   nThreads:
@@ -45,7 +38,7 @@ inputs:
     inputBinding:
       separate: true
       prefix: "-t"
-      position: 5
+      position: 4
 
 outputs:
   clean_fastq_R1:
