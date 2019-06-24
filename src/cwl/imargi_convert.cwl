@@ -17,8 +17,9 @@ inputs:
       separate: true
       prefix: "-f"
       position: 1
+    default: "cool"
 
-  input_file:
+  pairs_file:
     type: File
     inputBinding:
       separate: true
@@ -31,11 +32,12 @@ inputs:
       separate: true
       prefix: "-o"
       position: 4
+    default: "out.cool"
 
-
+outputs:
   mcool_file:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '.mcool')"
+      glob:"$(inputs.outdir + '/' + '*.mcool')"
 
 baseCommand: ["imargi_convert.sh"]

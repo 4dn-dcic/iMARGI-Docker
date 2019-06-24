@@ -77,6 +77,7 @@ inputs:
       separate: true
       prefix: "-M"
       position: 9
+    default: 1000
 
   drop:
     type: bool
@@ -92,17 +93,17 @@ inputs:
       separate: true
       prefix: "-t"
       position: 12
-
+    default: 8
 
 outputs:
   final_pairs:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/final' + '*pairs.gz')"
+      glob:"$(inputs.outdir + '/' + '*pairs.gz')"
 
   pipeline_stats:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/pipelineStats' + '*.log')"
+      glob:"$(inputs.outdir + '/' + '*.log')"
 
 baseCommand: ["imargi_parse.sh"]

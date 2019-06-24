@@ -11,45 +11,41 @@ requirements:
 - class: "InlineJavascriptRequirement"
 
 inputs:
-  fastq_R1:
-    type: File
+  distance_type:
+    type: string
     inputBinding:
       separate: true
-      prefix: "-1"
+      prefix: "-D"
       position: 1
+    default: "5end"
 
-  fastq_R2:
+  distance_threshold:
+    type: string
+    inputBinding:
+      separate: true
+      prefix: "-D"
+      position: 2
+    default: "200000"
+
+  pairs_file:
     type: File
     inputBinding:
       separate: true
-      prefix: "-2"
-      position: 2
+      prefix: "-i"
+      position: 3
 
-  output_dir:
+  out_file:
     type: string
     inputBinding:
       separate: true
       prefix: "-o"
-      position: 3
-    default: "."
-
-  nThreads:
-    type: int
-    inputBinding:
-      separate: true
-      prefix: "-t"
       position: 4
-    default: 4
+    default: "out"
 
 outputs:
-  clean_fastq_R1:
+  stats_file:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*clean__R1_fastq.gz')"
+      glob:"$(inputs.outdir + '/' + '*.txt')"
 
-  clean_fastq_R2:
-    type: File
-    outputBinding:
-      glob:"$(inputs.outdir + '/' + '*clean__R2_fastq.gz')"
-
-baseCommand: ["imargi_clean.sh"]
+baseCommand: ["imargi_stats.sh"]
