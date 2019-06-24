@@ -45,11 +45,11 @@ outputs:
   clean_fastq_R1:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*clean__R1_fastq.gz')"
+      glob: "$(inputs.output_dir + '/' + '*clean__R1.fastq.gz')"
 
   clean_fastq_R2:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*clean__R2_fastq.gz')"
+      glob: "$(inputs.output_dir + '/' + '*clean__R2.fastq.gz')"
 
 baseCommand: ["imargi_clean.sh"]
