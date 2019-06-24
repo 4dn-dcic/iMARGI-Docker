@@ -23,7 +23,7 @@ inputs:
     type: string
     inputBinding:
       separate: true
-      prefix: "-D"
+      prefix: "-d"
       position: 2
     default: "200000"
 
@@ -40,12 +40,12 @@ inputs:
       separate: true
       prefix: "-o"
       position: 4
-    default: "out"
+    default: "out.txt"
 
 outputs:
   stats_file:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*.txt')"
+      glob: "$('*.txt')"
 
 baseCommand: ["imargi_stats.sh"]

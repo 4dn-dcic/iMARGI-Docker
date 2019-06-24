@@ -68,7 +68,7 @@ inputs:
     inputBinding:
       separate: true
       prefix: "-O"
-      position:8
+      position: 8
     default: 0
 
   max_ligation_size:
@@ -80,12 +80,12 @@ inputs:
     default: 1000
 
   drop:
-    type: bool
+    type: string
     inputBinding:
       separate: true
       prefix: "-d"
       position: 10
-    default: true
+    default: "true"
 
   nThreads:
     type: int
@@ -99,11 +99,11 @@ outputs:
   final_pairs:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*pairs.gz')"
+      glob: "$(inputs.output_dir + '/' + '*.pairs.gz')"
 
   pipeline_stats:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*.log')"
+      glob: "$(inputs.output_dir + '/' + '*.log')"
 
 baseCommand: ["imargi_parse.sh"]

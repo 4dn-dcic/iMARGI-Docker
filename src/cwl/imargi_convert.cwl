@@ -38,6 +38,6 @@ outputs:
   mcool_file:
     type: File
     outputBinding:
-      glob:"$(inputs.outdir + '/' + '*.mcool')"
+      glob: "$('*.mcool')"
 
 baseCommand: ["imargi_convert.sh"]
