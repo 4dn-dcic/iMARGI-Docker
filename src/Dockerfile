@@ -36,8 +36,8 @@ RUN wget https://github.com/4dn-dcic/pairix/archive/0.3.6.tar.gz && \
     tar -xzf 0.3.6.tar.gz && \
     rm 0.3.6.tar.gz && \
     cd pairix-0.3.6 && \
-    make \
-    cd ..
+    make && \
+    cd .. && \
     ln -s pairix-0.3.6 pairix
     
 ENV LANG en_US.UTF-8
