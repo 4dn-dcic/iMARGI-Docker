@@ -43,6 +43,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV PYTHONUNBUFFERED=0
+ENV PATH=/usr/local/bin/pairix/bin/:/usr/local/bin/pairix/util/:$PATH
 
 COPY ./scripts/imargi_* /usr/local/bin/
 RUN chmod +x /usr/local/bin/imargi_* && mkdir /imargi && \
