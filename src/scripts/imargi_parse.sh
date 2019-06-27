@@ -188,7 +188,7 @@ pairtools select "$select_str" \
     --output $final_pairs \
     $dedup_pairs
 
-# pairix $final_pairs
+pairix $final_pairs
 
 date 
 echo "Generating final stats ... "
