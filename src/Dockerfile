@@ -3,8 +3,7 @@ ENV TIMEZONE America/Los_Angeles
 
 RUN apt-get update && \
     apt-get install -y \
-    wget \
-    git build-essential libz-dev libbz2-dev liblzma-dev libssl-dev libcurl4-gnutls-dev \
+    git wget build-essential libz-dev libbz2-dev liblzma-dev libssl-dev libcurl4-gnutls-dev \
     autoconf automake libncurses5-dev wget gawk parallel && \
     cd /tmp && git clone -b v1.3 https://github.com/lh3/seqtk.git && \
     cd seqtk && make && make install && \
