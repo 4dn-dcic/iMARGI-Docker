@@ -31,6 +31,15 @@ RUN apt-get --purge remove -y build-essential git autoconf automake wget
 
 RUN apt-get -y install locales && \
     sed -i -e 's/# \(en_US\.UTF-8 .*\)/\1/' /etc/locale.gen && locale-gen
+    
+RUN wget https://github.com/4dn-dcic/pairix/archive/0.3.6.tar.gz && \
+    tar -xzf 0.3.6.tar.gz && \
+    rm 0.3.6.tar.gz && \
+    cd pairix-0.3.6 && \
+    make \
+    cd ..
+    ln -s pairix-0.3.6 pairix
+    
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
