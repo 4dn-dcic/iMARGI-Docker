@@ -3,6 +3,7 @@ ENV TIMEZONE America/Los_Angeles
 
 RUN apt-get update && \
     apt-get install -y \
+    wget \
     git build-essential libz-dev libbz2-dev liblzma-dev libssl-dev libcurl4-gnutls-dev \
     autoconf automake libncurses5-dev wget gawk parallel && \
     cd /tmp && git clone -b v1.3 https://github.com/lh3/seqtk.git && \
@@ -32,7 +33,7 @@ RUN apt-get --purge remove -y build-essential git autoconf automake wget
 RUN apt-get -y install locales && \
     sed -i -e 's/# \(en_US\.UTF-8 .*\)/\1/' /etc/locale.gen && locale-gen
     
-RUN apt-get https://github.com/4dn-dcic/pairix/archive/0.3.6.tar.gz && \
+RUN wget https://github.com/4dn-dcic/pairix/archive/0.3.6.tar.gz && \
     tar -xzf 0.3.6.tar.gz && \
     rm 0.3.6.tar.gz && \
     cd pairix-0.3.6 && \
