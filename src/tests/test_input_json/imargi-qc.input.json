@@ -1,0 +1,11 @@
+{
+    "pipeline_stats": {
+        "class": "File",
+        "path": "../test_files/"
+    },
+
+    "pairs_stats": {
+        "class": "File",
+        "path": "../test_files/"
+    }
+}

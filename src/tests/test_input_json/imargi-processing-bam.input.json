@@ -1,16 +1,15 @@
 {
-    "bam_file": {
+    "assembly": "hg38",
+    "input_bam": {
         "class": "File",
         "path": "../test_files/test.bam"
     },
-    "chromsizes": {
+    "chromsize": {
         "class": "File",
         "path": "../test_files/chromsize.hg38.txt"
     },
-    "restrict_fragments": {
+    "restrict_frags": {
         "class": "File",
-        "path": "../test_files/test_AluI_frags.bed.gz"
-    },
-    "assembly": "hg38",
-    "nThreads": 4
+        "path": "../test_files/AluI_frags.bed.gz"
+    }
 }

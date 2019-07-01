@@ -1,6 +1,8 @@
 {
-    "pairs_file": {
+    "out_format": "cool",
+    "input_file": {
         "class": "File",
-        "path": "../test_files/final_test.pairs.gz",
-    }
+        "path": "../test_files/final_test.pairs.gz"
+    },
+    "out_file": ".cool"
 }

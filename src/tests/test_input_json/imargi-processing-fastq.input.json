@@ -8,5 +8,9 @@
         "class": "File",
         "path": "../test_files/test3_R2.fastq.gz"
     },
+    "bwa_index":{
+        "class": "File",
+        "path": "../test_files/bwa_index.tar.gz"
+    },
     "nthreads": 4
 }
