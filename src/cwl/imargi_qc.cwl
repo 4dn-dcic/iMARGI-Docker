@@ -31,6 +31,6 @@ outputs:
   qc_report:
     type: File
     outputBinding:
-      glob: "$(inputs.output_dir + '/' + 'qc_report.txt')"
+      glob: "$(inputs.output_dir + '/' + 'qc_report.json')"
 
 baseCommand: ["imargi_qc.sh"]

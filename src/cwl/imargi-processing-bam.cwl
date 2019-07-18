@@ -53,7 +53,7 @@ outputs:
     type:
       - "File"
 -
-    fdn_format: "txt"
+    fdn_format: "json"
     fdn_output_type: "processed"
     id: "#out_qc"
     outputSource: "#imargi-qc/qc_report"
@@ -150,7 +150,7 @@ steps:
     out:
       -
         arg_name: "#qc_report"
-        fdn_format: "txt"
+        fdn_format: "json"
         id: "#imargi-qc/qc_report"
 
     run: "imargi_qc.cwl"
