@@ -8,4 +8,4 @@ then
   mkdir $OUTDIR
 fi
 
-python /usr/local/bin/get_qc.py $PIPELINE_STATS $PAIRS_STATS $OUTDIR
+python3 /usr/local/bin/get_qc.py $PIPELINE_STATS $PAIRS_STATS $OUTDIR
