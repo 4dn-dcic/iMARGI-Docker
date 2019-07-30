@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-PAIRS_STATS=$2
-OUTDIR=$3
+PAIRS_STATS=$1
+OUTDIR=$2
 
 if [ ! -d "$OUTDIR" ]
 then

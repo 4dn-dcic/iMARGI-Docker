@@ -19,7 +19,7 @@ def main(pairs_stats, outdir):
             val = line.split('\n')[0].split('\t')[1]
             qc_dict[key] = val
 
-    with open(f'{outdir}/marged_pairs_qc.json', 'w') as out:
+    with open(f'{outdir}/merged_pairs_qc.json', 'w') as out:
         json.dump(qc_dict, out, indent=2)
 
 
