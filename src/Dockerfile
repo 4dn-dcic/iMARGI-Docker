@@ -46,7 +46,8 @@ ENV PYTHONUNBUFFERED=0
 ENV PATH=/pairix/bin/:/pairix/util/:$PATH
 
 COPY ./scripts/imargi_* /usr/local/bin/
-COPY ./scripts/get_qc.py /usr/local/bin/
+COPY ./scripts/get_single_pairs_qc.py /usr/local/bin/
+COPY ./scripts/get_merged_pairs_qc.py /usr/local/bin/
 RUN chmod +x /usr/local/bin/imargi_* && mkdir /imargi && \
     sed -i -e 's/^\/repository\/user\/main\/public\/root = "$(HOME)\/ncbi\/public"/\/repository\/user\/main\/public\/root = "\/imargi"/' /usr/local/bin/ncbi/default.kfg
 
