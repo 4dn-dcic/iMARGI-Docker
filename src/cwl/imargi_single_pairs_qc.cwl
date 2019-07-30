@@ -11,33 +11,26 @@ requirements:
 - class: "InlineJavascriptRequirement"
 
 inputs:
-  out_format:
-    type: string
-    inputBinding:
-      separate: true
-      prefix: "-f"
-      position: 1
-    default: "cool"
-
-  pairs_file:
+  pipeline_stats:
     type: File
     inputBinding:
-      separate: true
-      prefix: "-i"
-      position: 3
+      position: 1
 
-  out_file:
+  pairs_stats:
+    type: File
+    inputBinding:
+      position: 2
+
+  output_dir:
     type: string
     inputBinding:
-      separate: true
-      prefix: "-o"
-      position: 4
-    default: "out.cool"
+      position: 3
+    default: "."
 
 outputs:
-  mcool_file:
+  qc_report:
     type: File
     outputBinding:
-      glob: "$('*.mcool')"
+      glob: "$(inputs.output_dir + '/' + 'qc_report.json')"
 
-baseCommand: ["imargi_convert.sh"]
+baseCommand: ["imargi_single_pairs_qc.sh"]

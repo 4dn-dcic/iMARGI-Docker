@@ -11,26 +11,21 @@ requirements:
 - class: "InlineJavascriptRequirement"
 
 inputs:
-  pipeline_stats:
+  merged_pairs_stats:
     type: File
     inputBinding:
       position: 1
 
-  pairs_stats:
-    type: File
-    inputBinding:
-      position: 2
-
   output_dir:
     type: string
     inputBinding:
-      position: 3
+      position: 2
     default: "."
 
 outputs:
-  qc_report:
+  merged_pairs_qc:
     type: File
     outputBinding:
-      glob: "$(inputs.output_dir + '/' + 'qc_report.json')"
+      glob: "$(inputs.output_dir + '/' + 'merged_pairs_qc.json')"
 
-baseCommand: ["imargi_qc.sh"]
+baseCommand: ["imargi_merged_pairs_qc.sh"]

@@ -35,6 +35,13 @@ outputs:
     outputSource: "#imargi-convert/mcool_file"
     type:
       - "File"
+-
+    fdn_format: "json"
+    fdn_output_type: "processed"
+    id: "#out_qc"
+    outputSource: "#imargi-qc/merged_pairs_qc"
+    type:
+      - "File"
 
 requirements:
   -
@@ -86,3 +93,39 @@ steps:
         fdn_format: "mcool"
         id: "#imargi-convert/mcool_file"
     run: "imargi_convert.cwl"
+  -
+    fdn_step_meta:
+      analysis_step_types:
+        - "stats report"
+      description: ""
+    id: "#imargi-stats"
+    in:
+      -
+        arg_name: "pairs_file"
+        fdn_format: "pairs"
+        id: "#imargi-stats/pairs_file"
+        source: "#merge-pairs/merged_pairs"
+    out:
+      -
+        arg_name: "#stats_file"
+        fdn_format: "txt"
+        id: "#imargi-stats/stats_file"
+    run: "imargi_stats.cwl"
+  -
+    fdn_step_meta:
+      analysis_step_types:
+        - "QC report"
+      description: ""
+    id: "#imargi-qc"
+    in:
+      -
+        arg_name: "merged_pairs_stats"
+        fdn_format: "txt"
+        id: "#imargi-qc/merged_pairs_stats"
+        source: "#imargi-stats/stats_file"
+    out:
+      -
+        arg_name: "#merged_pairs_qc"
+        fdn_format: "json"
+        id: "#imargi-qc/merged_pairs_qc"
+    run: "imargi_merged_pairs_qc.cwl"

@@ -152,5 +152,4 @@ steps:
         arg_name: "#qc_report"
         fdn_format: "json"
         id: "#imargi-qc/qc_report"
-
-    run: "imargi_qc.cwl"
+    run: "imargi_single_pairs_qc.cwl"
