@@ -110,7 +110,7 @@ steps:
         arg_name: "#stats_file"
         fdn_format: "txt"
         id: "#imargi-stats/stats_file"
-    run: "imargi_convert.cwl"
+    run: "imargi_stats.cwl"
   -
     fdn_step_meta:
       analysis_step_types:
