@@ -69,7 +69,7 @@ inputs:
       separate: true
       prefix: "-O"
       position: 8
-    default: 0
+    default: 3
 
   max_ligation_size:
     type: int
