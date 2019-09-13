@@ -4,7 +4,7 @@ PROGNAME=$0
 
 usage() {
     cat << EOF >&2
-    Usage: $PROGNAME [-f <file_format>] [-k <keep_cols>] [-b <bin_size>] [-r <resolution>] [-i <input_file>] [-o <output_file>] 
+    Usage: $PROGNAME [-f <file_format>] [-k <keep_cols>] [-b <bin_size>] [-r <resolution>] [-i <input_file>] [-o <output_file>]
 
     Dependency: gzip, awk, cool
     This script can convert .pairs format to BEDPE, .cool, and GIVE interaction format.
@@ -43,11 +43,11 @@ done
 [ -z "$keep_cols" ] && keep_cols=""
 [ -z "$bin_size" ] && bin_size=1000
 if ! [[ "$bin_size" =~ ^[0-9]+$ ]]; then
-    echo "Error!! Only integer number is acceptable for -b" && usage 
+    echo "Error!! Only integer number is acceptable for -b" && usage
 fi
 [ -z "$resolution" ] && resolution="1000,2000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000"
 if ! [[ "$resolution" =~ ^([0-9]+,)*[0-9]+$ ]]; then
-    echo "Error!! Only integer numbers separated by comma is acceptable for -r" && usage 
+    echo "Error!! Only integer numbers separated by comma is acceptable for -r" && usage
 fi
 [ ! -f "$input_file" ] && echo "Error!! Input file not exist: "$input_file && usage
 [ -f "$output_file" ] && echo "Error!! Output file already exist: "$output_file && usage
@@ -56,7 +56,7 @@ if [ "$format" == "bedpe" ]; then
     echo ">>>>>>>>> Start: Convert .pairs format $input_file to BEDPE format $output_file ..."
     date
     if ! [[ "$output_file" =~ \.gz$ ]]; then
-        echo "Warning! Output BEDPE file is a compressed file. It's better to use .gz extension file name." 
+        echo "Warning! Output BEDPE file is a compressed file. It's better to use .gz extension file name."
     fi
 
     zcat $input_file | \
@@ -85,12 +85,12 @@ if [ "$format" == "bedpe" ]; then
             };
             if(!($0 ~ /^#/)){
                 type_n1=split(gensub("[0-9]+", "", "g", $11), type1, "");
-                val_n1=split($11, val1, "[A-Z=]"); 
+                val_n1=split($11, val1, "[A-Z=]");
                 m_flag=0; m_index=0;
                 for(i=1;i<=type_n1;i++){
                     if(type1[i] ~ /[M=XND]/){
                         if(m_flag==0){
-                            m_flag=1; 
+                            m_flag=1;
                             m_index+=1;
                             mval1[m_index]=val1[i];
                         }else{
@@ -134,7 +134,7 @@ if [ "$format" == "bedpe" ]; then
                 if(length(extra_cols)>0){
                     for(i in extra_cols){
                         if(extra_info==""){
-                            extra_info=$i; 
+                            extra_info=$i;
                         }else{
                             extra_info=extra_info"\t"$i
                         };
@@ -153,12 +153,12 @@ if [ "$format" == "give" ]; then
             if(NR % 1000000 == 0){print NR" records processed ..." > "/dev/stderr" }
             if(!($0 ~ /^#/)){
                 type_n1=split(gensub("[0-9]+", "", "g", $11), type1, "");
-                val_n1=split($11, val1, "[A-Z=]"); 
+                val_n1=split($11, val1, "[A-Z=]");
                 m_flag=0; m_index=0;
                 for(i=1;i<=type_n1;i++){
                     if(type1[i] ~ /[M=XND]/){
                         if(m_flag==0){
-                            m_flag=1; 
+                            m_flag=1;
                             m_index+=1;
                             mval1[m_index]=val1[i];
                         }else{
@@ -216,10 +216,10 @@ if [ "$format" == "cool" ]; then
     date
 
     chrom_size="chromsize."$RANDOM
-    
+
     zcat $input_file | awk 'BEGIN{OFS="\t"}{if($0 !~ /^#/){exit;}; if($0 ~/^#chromsize/){print $2, $3};}' > $chrom_size
 
-    cooler cload pairs --no-symmetric-upper --chrom1 2 --pos1 3 --chrom2 4 --pos2 5 \
+    cooler cload pairs --no-symmetric-upper --chrom1 4 --pos1 5 --chrom2 2 --pos2 3 \
         $chrom_size:$bin_size $input_file $output_file
 
     cooler zoomify -r $resolution $output_file
