@@ -219,9 +219,13 @@ if [ "$format" == "cool" ]; then
 
     zcat $input_file | awk 'BEGIN{OFS="\t"}{if($0 !~ /^#/){exit;}; if($0 ~/^#chromsize/){print $2, $3};}' > $chrom_size
 
-    cooler cload pairs --no-symmetric-upper --chrom1 4 --pos1 5 --chrom2 2 --pos2 3 \
+    cooler cload pairs --no-symmetric-upper --chrom1 2 --pos1 3 --chrom2 4 --pos2 5 \
         $chrom_size:$bin_size $input_file $output_file
-
+    
+    cooler dump $output_file \
+        awk 'BEGIN{OFS="\t"}{print $2,$1,$3}' \
+        cooler load -f coo -N <(cooler dump -t bins $output_file) - $output_file
+    
     cooler zoomify -r $resolution $output_file
     rm $chrom_size
 fi
