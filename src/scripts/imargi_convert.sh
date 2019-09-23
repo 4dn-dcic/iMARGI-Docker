@@ -223,8 +223,8 @@ if [ "$format" == "cool" ]; then
         $chrom_size:$bin_size $input_file $output_file
     
     cooler dump $output_file \
-        awk 'BEGIN{OFS="\t"}{print $2,$1,$3}' \
-        cooler load -f coo -N <(cooler dump -t bins $output_file) - $output_file
+       | awk 'BEGIN{OFS="\t"}{print $2,$1,$3}' \
+       | cooler load -f coo -N <(cooler dump -t bins $output_file) - $output_file
     
     cooler zoomify -r $resolution $output_file
     rm $chrom_size
