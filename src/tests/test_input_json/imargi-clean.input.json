@@ -1,0 +1,12 @@
+{
+    "fastq_R1": {
+        "class": "File",
+        "path": "../test_files/test3_R1.fastq.gz"
+    },
+
+    "fastq_R2": {
+        "class": "File",
+        "path": "../test_files/test3_R2.fastq.gz"
+    },
+    "nthreads": 4
+}

@@ -1,0 +1,12 @@
+{ 
+     "ref_genome": {
+        "class": "File",
+        "path": "../test_files/ref_genome_small.fasta"
+     },
+     "chromsizes": {
+        "class": "File",
+        "path": "../test_files/chromsize.hg38.txt"
+     },
+     "enzyme_name": "AluI",
+     "cut_position": 2
+}

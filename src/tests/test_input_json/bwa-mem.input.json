@@ -1,0 +1,15 @@
+{
+    "fastq1": {
+        "class": "File", 
+        "path": "../test_files/"
+    }, 
+    "fastq2": {
+        "class": "File", 
+        "path": "../test_files/"
+    }, 
+    "bwa_index": {
+        "class": "File", 
+        "path": "../test_files/hg38.MTonly.bwaIndex.tgz"
+    }, 
+    "nThreads": 1
+}

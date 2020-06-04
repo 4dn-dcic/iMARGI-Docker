@@ -1,0 +1,13 @@
+{
+    "input_pairs": [
+      {
+        "class": "File",
+        "path": "../test_files/final_test.pairs.gz"
+      },
+      {
+        "class": "File",
+        "path": "../test_files/final_test_sample.pairs.gz"
+      }
+
+    ]
+}

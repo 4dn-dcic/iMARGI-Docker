@@ -1,0 +1,16 @@
+{
+    "bam_file": {
+        "class": "File",
+        "path": "../test_files/test.bam"
+    },
+    "chromsizes": {
+        "class": "File",
+        "path": "../test_files/chromsize.hg38.txt"
+    },
+    "restrict_fragments": {
+        "class": "File",
+        "path": "../test_files/test_AluI_frags.bed.gz"
+    },
+    "assembly": "hg38",
+    "nThreads": 4
+}

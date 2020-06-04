@@ -1,0 +1,8 @@
+{
+    "out_format": "cool",
+    "input_file": {
+        "class": "File",
+        "path": "../test_files/final_test.pairs.gz"
+    },
+    "out_file": ".cool"
+}

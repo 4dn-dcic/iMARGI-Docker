@@ -1,0 +1,7 @@
+
+{
+    "pairs_file": {
+        "class": "File",
+        "path": "../test_files/final_test.pairs.gz",
+    }
+}
